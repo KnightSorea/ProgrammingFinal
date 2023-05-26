@@ -30,6 +30,9 @@ public class Car : MonoBehaviour
          * The Vertical Axis should make the player move forwards and backwards
          * The Horizontal Axis should make the player rotate on the Vector3.back axis
          */
-
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
+        transform.Translate(Vector2.up * moveSpeed * verticalInput * Time.deltaTime);
+        transform.Rotate(Vector3.back, turnSpeed * horizontalInput * Time.deltaTime);
     }
 }
